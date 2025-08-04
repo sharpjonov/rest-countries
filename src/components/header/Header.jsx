@@ -1,16 +1,16 @@
 import "./header.css";
 import moon from "../../assets/images/half-moon.svg";
-// import { Link } from "react-router-dom";
-import { useState } from "react";
 
-function Header() {
-  const [theme, setTheme] = useState(false);
+function Header({ theme, setTheme }) {
   const handleBtn = () => {
     setTheme(!theme);
   };
+
   return (
     <>
-      <header className={theme ? "bg-black text-white" : "bg-white text-black"}>
+      <header
+        className={theme ? "bg-[#2B3844] text-white" : "bg-white text-black"}
+      >
         <div className="container">
           <div className="header__inner">
             <div className="header__left">

@@ -6,8 +6,9 @@ import Card from "../Card/Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Hero() {
+function Hero({ theme }) {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,11 +26,15 @@ function Hero() {
 
   return (
     <>
-      <main>
+      <main
+        className={
+          theme ? "bg-[#202C36] text-white" : "bg-[#FAFAFA] text-black"
+        }
+      >
         <section className="hero">
           <div className="container">
             <div className="hero__inner">
-              <Form />
+              <Form theme={theme} />
               <div className="hero__bottom">
                 {data.map((el) => (
                   <Card
@@ -39,12 +44,9 @@ function Hero() {
                     name={el.name.common}
                     region={el.region}
                     population={el.population}
+                    theme={theme}
                   />
                 ))}
-
-                {/* {data.map((el) => {
-                  return <CountryInfo key={el.id} el={el} />;
-                })} */}
               </div>
             </div>
           </div>

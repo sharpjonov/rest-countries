@@ -1,9 +1,10 @@
-// import { BiLeftArrowAlt } from "react-icons/bi";
+// import "./countryinfo.css";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Header from "../components/header/Header";
-import LeftArrow from "../assets/images/left-arrow.svg";
+import Header from "../../components/header/Header";
+import LeftArrow from "../../assets/images/left-arrow.svg";
+import loading from "../../assets/images/loading-notfound.svg";
 
 function CountryInfo() {
   const [data, setData] = useState([]);
@@ -41,7 +42,7 @@ function CountryInfo() {
           </Link>
           {el ? (
             <>
-              <div className="pt-[80px] flex gap-[120px] items-center">
+              <div className="pt-[80px] flex flex-col md:flex md:flex-row gap-[44px] md:gap-[120px] items-center">
                 <div>
                   <img
                     width={560}
@@ -52,13 +53,13 @@ function CountryInfo() {
                   />
                 </div>
                 <div>
-                  <div className="flex gap-[141px] items-center w-[598px]">
+                  <div className="flex flex-col gap-[32px] md:flex-row md:gap-[141px] items-start md:items-center pl-[20px] w-[598px]">
                     <div style={{ width: "207px" }} className="w-[207px]">
                       <h1 className="text-[#111517] font-[800] text-[32px]/[100%] mb-[23px]">
                         {el.name.common}
                       </h1>
                       <p className="font-[600] text-[16px]/[32px] text-[#111517]">
-                        Native Name: {""}
+                        Native Name: {""}t
                         <span className="font-[300]">
                           {Object.values(el.name.nativeName)[0].common}
                         </span>
@@ -105,7 +106,9 @@ function CountryInfo() {
               </div>
             </>
           ) : (
-            <div></div>
+            <div>
+              <img src={loading} alt="" />
+            </div>
           )}
         </div>
       </section>
