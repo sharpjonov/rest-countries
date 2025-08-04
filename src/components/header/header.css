@@ -13,21 +13,22 @@ header {
   margin: 0;
   font-size: 24px;
   font-weight: 800;
-  color: #111517;
+  /* color: #111517; */
 }
 
 .header__right__link {
   text-decoration: none;
-  color: #111517;
+  /* color: #111517; */
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .header__right {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; */
   cursor: pointer;
 }
 
